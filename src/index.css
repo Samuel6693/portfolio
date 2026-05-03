@@ -1,0 +1,19 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background:
+    linear-gradient(180deg, #f6f9ff 0%, #f8fafc 42%, #fff7ed 100%);
+  color: #111827;
+}
