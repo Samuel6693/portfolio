@@ -6,7 +6,7 @@ const contactLinks = [
   },
   {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/samuel-somy-6693/',
+    href: 'https://www.linkedin.com/in/samuel-soumi-7b88aa347/',
     text: 'LinkedIn',
     external: true,
   },
