@@ -17,6 +17,7 @@ const ProjectCard = ({
   featured = false,
 }) => {
   const [activeScreenshot, setActiveScreenshot] = useState(null);
+  const [ isExpanded, setIsExpanded ] = useState(false);
 
   useEffect(() => {
     if (!activeScreenshot) {
@@ -65,7 +66,7 @@ const ProjectCard = ({
           </div>
         </div>
 
-        <div className="project-card-body">
+        <div className={`project-card-details${isExpanded ? ' is-expanded' : ''}`}>
           {summary ? <p className="project-card-summary">{summary}</p> : null}
 
           <p>
@@ -82,6 +83,15 @@ const ProjectCard = ({
               ))}
             </ul>
           ) : null}
+          </div>
+
+          <button  
+            type="button"
+            className="show-more-button"
+            onClick={() => setIsExpanded(!isExpanded)}
+          >
+            {isExpanded ? 'Show Less' : 'Show More'}
+          </button>
 
           {screenshots?.length ? (
             <div className="project-gallery">
@@ -110,7 +120,6 @@ const ProjectCard = ({
               </span>
             ))}
           </div>
-        </div>
       </article>
 
       {activeScreenshot ? (
