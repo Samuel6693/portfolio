@@ -13,7 +13,14 @@ const Hero = () => {
 
       <div className="hero-actions">
         <a href="#projects" className="button button-primary">View Projects</a>
-        <a href="#contact" className="button button-secondary">Contact Me</a>
+        <a
+          href="/Samuel_Soumi_CV.pdf"
+          className="button button-secondary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Resume
+        </a>
       </div>
 
       <div className="hero-tags">
