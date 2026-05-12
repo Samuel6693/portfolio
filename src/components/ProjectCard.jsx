@@ -17,7 +17,10 @@ const ProjectCard = ({
   featured = false,
 }) => {
   const [activeScreenshot, setActiveScreenshot] = useState(null);
-  const [ isExpanded, setIsExpanded ] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [currentScreenshotIndex, setCurrentScreenshotIndex] = useState(0);
+
+  const currentScreenshot = screenshots?.[currentScreenshotIndex];
 
   useEffect(() => {
     if (!activeScreenshot) {
@@ -83,43 +86,71 @@ const ProjectCard = ({
               ))}
             </ul>
           ) : null}
+        </div>
+
+        <button
+          type="button"
+          className="show-more-button"
+          onClick={() => setIsExpanded(!isExpanded)}
+        >
+          {isExpanded ? 'Show Less' : 'Show More'}
+        </button>
+
+        {currentScreenshot ? (
+          <div className="project-carousel">
+            <button
+              type="button"
+              className="project-carousel-button"
+              onClick={() =>
+                setCurrentScreenshotIndex(
+                  (currentScreenshotIndex - 1 + screenshots.length) % screenshots.length
+                )
+              }
+            >
+              Previous
+            </button>
+
+            <figure className="project-gallery-item">
+              <button
+                type="button"
+                className="project-gallery-button"
+                onClick={() => setActiveScreenshot(currentScreenshot)}
+                aria-label={`Open screenshot: ${currentScreenshot.alt}`}
+              >
+                <img
+                  src={currentScreenshot.src}
+                  alt={currentScreenshot.alt}
+                  className="project-gallery-image"
+                />
+              </button>
+
+              {currentScreenshot.caption ? (
+                <figcaption className="project-gallery-caption">
+                  {currentScreenshot.caption}
+                </figcaption>
+              ) : null}
+            </figure>
+
+            <button
+              type="button"
+              className="project-carousel-button"
+              onClick={() =>
+                setCurrentScreenshotIndex((currentScreenshotIndex + 1) % screenshots.length)
+              }
+            >
+              Next
+            </button>
           </div>
+        ) : null}
 
-          <button  
-            type="button"
-            className="show-more-button"
-            onClick={() => setIsExpanded(!isExpanded)}
-          >
-            {isExpanded ? 'Show Less' : 'Show More'}
-          </button>
 
-          {screenshots?.length ? (
-            <div className="project-gallery">
-              {screenshots.map((shot) => (
-                <figure key={shot.src} className="project-gallery-item">
-                  <button
-                    type="button"
-                    className="project-gallery-button"
-                    onClick={() => setActiveScreenshot(shot)}
-                    aria-label={`Open screenshot: ${shot.alt}`}
-                  >
-                    <img src={shot.src} alt={shot.alt} className="project-gallery-image" />
-                  </button>
-                  {shot.caption ? (
-                    <figcaption className="project-gallery-caption">{shot.caption}</figcaption>
-                  ) : null}
-                </figure>
-              ))}
-            </div>
-          ) : null}
-
-          <div className="project-tech">
-            {techStack.map((tech) => (
-              <span key={tech} className="project-tech-pill">
-                {tech}
-              </span>
-            ))}
-          </div>
+        <div className="project-tech">
+          {techStack.map((tech) => (
+            <span key={tech} className="project-tech-pill">
+              {tech}
+            </span>
+          ))}
+        </div>
       </article>
 
       {activeScreenshot ? (
