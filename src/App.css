@@ -1,6 +1,8 @@
 .portfolio-shell {
   min-height: 100vh;
   background: #f8fbff;
+  display: grid;
+  grid-template-rows: 1fr auto;
 }
 
 .page {
@@ -271,6 +273,18 @@ html {
   background: #ecfdf5;
 }
 
+.footer {
+  width: calc(100% - 300px);
+  margin-left: 300px;
+  padding: 32px clamp(40px, 5vw, 96px);
+  border-top: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.footer .section-heading {
+  margin-bottom: 20px;
+}
+
 .project-card-featured {
   position: relative;
   overflow: hidden;
@@ -483,6 +497,12 @@ a:hover {
 
   .section {
     padding: 24px;
+  }
+
+  .footer {
+    width: 100%;
+    margin-left: 0;
+    padding: 24px 16px;
   }
 
   .hero {

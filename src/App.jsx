@@ -41,9 +41,9 @@ function App() {
             
           </div>
         </section>
-
-        <Contact />
       </main>
+
+      <Contact />
     </div>
   );
 }
