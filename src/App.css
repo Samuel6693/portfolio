@@ -4,10 +4,10 @@
 }
 
 .page {
-  width: calc(100% - 260px);
+  width: calc(100% - 300px);
   max-width: none;
-  margin-left: 260px;
-  padding: 72px clamp(32px, 5vw, 96px) 72px;
+  margin-left: 300px;
+  padding: 72px clamp(40px, 5vw, 96px) 72px;
 }
 html {
   scroll-behavior: smooth;
@@ -17,9 +17,9 @@ html {
   position: fixed;
   inset: 0 auto 0 0;
   z-index: 100;
-  width: 260px;
+  width: 300px;
   height: 100vh;
-  padding: 32px 24px;
+  padding: 40px 32px;
   border-right: 1px solid #e5e7eb;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
@@ -28,17 +28,19 @@ html {
 .sidebar-logo {
   display: inline-flex;
   margin-bottom: 36px;
-   color: #111827;
+  color: #111827;
+  font-size: 1.15rem;
   font-weight: 800;
 }
 .sidebar-nav {
   display: grid;
-  gap: 20px;
+  gap: 14px;
 }
 .sidebar-nav a {
   padding: 10px 12px;
   border-radius: 8px;
   color: #3f4b5b;
+  font-size: 1.2rem;
   font-weight: 700;
 }
 .sidebar-nav a:hover {
@@ -83,7 +85,7 @@ html {
 .hero-lead {
   max-width: 100%;
   margin: 20px 0 0;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   color: #3f4b5b;
 }
 
@@ -338,7 +340,7 @@ html {
 }
 
 .project-card-summary {
-  font-size: 1.02rem;
+  font-size: 1.25rem;
   color: #27445d;
 }
 
@@ -532,12 +534,14 @@ h2 {
 
 p {
   color: #3f4b5b;
-  line-height: 1.6;
+  font-size: 1.25rem;
+  line-height: 1.7;
 }
 
 ul {
   padding-left: 20px;
-  line-height: 1.7;
+  font-size: 1.25rem;
+  line-height: 1.75;
 }
 
 li+li {
