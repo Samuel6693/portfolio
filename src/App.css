@@ -1,48 +1,56 @@
+.portfolio-shell {
+  min-height: 100vh;
+  background: #f8fbff;
+}
+
 .page {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 56px 20px 72px;
+  width: calc(100% - 260px);
+  max-width: none;
+  margin-left: 260px;
+  padding: 72px clamp(32px, 5vw, 96px) 72px;
 }
 html {
   scroll-behavior: smooth;
 }
 
-.site-header {
-  position: sticky;
-  top: 0;
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.92);
+  width: 260px;
+  height: 100vh;
+  padding: 32px 24px;
+  border-right: 1px solid #e5e7eb;
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid #e5e7eb;
 }
 
-.site-header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 18px 20px;
-}
-.site-logo {
-  color: #111827;
+.sidebar-logo {
+  display: inline-flex;
+  margin-bottom: 36px;
+   color: #111827;
   font-weight: 800;
 }
-.site-nav {
-  display: flex;
-  gap: 18px;
-  align-items: center;
+.sidebar-nav {
+  display: grid;
+  gap: 20px;
 }
-.site-nav a {
+.sidebar-nav a {
+  padding: 10px 12px;
+  border-radius: 8px;
   color: #3f4b5b;
   font-weight: 700;
-  font-size: 0.95rem;
 }
-.site-logo:hover,
-.site-nav a:hover {
+.sidebar-nav a:hover {
+  background: #ecfdf5;
   text-decoration: none;
-  color: #0f766e;
+}
+.project-anchor {
+  scroll-margin-top: 32px;
+}
+
+.project-anchor:first-child {
+  grid-column: 1 / -1;
 }
 
 .section {
@@ -69,11 +77,11 @@ html {
 }
 
 .hero h1 {
-  max-width: 900px;
+  max-width: 100%;
 }
 
 .hero-lead {
-  max-width: 680px;
+  max-width: 100%;
   margin: 20px 0 0;
   font-size: 1.1rem;
   color: #3f4b5b;
@@ -92,7 +100,8 @@ html {
 
 .project-list {
   display: grid;
-  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
 }
 
 .project-card {
@@ -181,8 +190,8 @@ html {
 }
 
 .section-heading {
-  max-width: 760px;
-  margin-bottom: 24px;
+  max-width: 980px;
+  margin-bottom: 28px;
 }
 
 .section-kicker {
@@ -544,9 +553,37 @@ a:hover {
   text-decoration: underline;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 900px) {
   .page {
+    width: 100%;
+    margin-left: 0;
     padding: 32px 16px 56px;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 0;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    padding: 16px;
+    border-right: 0;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .sidebar-logo {
+    margin-bottom: 12px;
+  }
+
+  .sidebar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    overflow: visible;
+  }
+
+  .sidebar-nav a {
+    white-space: nowrap;
   }
 
   .section {
@@ -556,15 +593,6 @@ a:hover {
   .hero {
     padding: 48px 0 40px;
   }
-  .site-header-inner {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .site-nav {
-    width: 100%;
-    justify-content: space-between;
-  }
 
   .about-grid {
     grid-template-columns: 1fr;
@@ -572,6 +600,14 @@ a:hover {
 
   .project-card-header {
     flex-direction: column;
+  }
+
+  .project-list {
+    grid-template-columns: 1fr;
+  }
+
+  .project-anchor:first-child {
+    grid-column: auto;
   }
 
   .project-links {

@@ -13,7 +13,7 @@ const Hero = () => {
 
       <div className="hero-actions">
         <a href="#projects" className="button button-primary">View Projects</a>
-        <a
+        <a id="Resume"
           href="/Samuel_Soumi_CV.pdf"
           className="button button-secondary"
           target="_blank"
