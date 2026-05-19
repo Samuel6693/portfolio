@@ -11,18 +11,6 @@ const Hero = () => {
         fullstack developer.
       </p>
 
-      <div className="hero-actions">
-        <a href="#projects" className="button button-primary">View Projects</a>
-        <a id="Resume"
-          href="/Samuel_Soumi_CV.pdf"
-          className="button button-secondary"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View Resume
-        </a>
-      </div>
-
       <div className="hero-tags">
         <span>Available for LIA</span>
         <span>React</span>
