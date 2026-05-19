@@ -26,7 +26,7 @@ const contactLinks = [
 
 const Contact = () => {
   return (
-    <section id="contact" className="contact section">
+    <footer id="contact" className="contact footer">
       <div className="section-heading">
         <p className="section-kicker">Contact</p>
         <h2>Let&apos;s talk about LIA, junior roles, or collaboration.</h2>
@@ -52,7 +52,7 @@ const Contact = () => {
           </li>
         ))}
       </ul>
-    </section>
+    </footer>
   );
 };
 
