@@ -44,6 +44,7 @@ const ProductivityAssistantApp = () => {
       ]}
       techStack={['React', 'Vite', 'React Router', 'JavaScript', 'CSS', 'localStorage', 'ESLint']}
       githubUrl="https://github.com/Samuel6693/productivity-assistant-portfolio"
+      demoUrl="https://productivity-assistant-portfolio.vercel.app/"
       featured
     />
   );
