@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const ProjectCard = ({
   title,
@@ -10,35 +10,14 @@ const ProjectCard = ({
   repoLinks = [],
   demoUrl,
   demoLabel = 'Live Demo',
+  previewUrl,
+  previewTitle,
   eyebrow,
   summary,
   highlights,
-  screenshots,
   featured = false,
 }) => {
-  const [activeScreenshot, setActiveScreenshot] = useState(null);
   const [isExpanded, setIsExpanded] = useState(false);
-  const [currentScreenshotIndex, setCurrentScreenshotIndex] = useState(0);
-
-  const currentScreenshot = screenshots?.[currentScreenshotIndex];
-
-  useEffect(() => {
-    if (!activeScreenshot) {
-      return undefined;
-    }
-
-    const handleEscape = (event) => {
-      if (event.key === 'Escape') {
-        setActiveScreenshot(null);
-      }
-    };
-
-    window.addEventListener('keydown', handleEscape);
-
-    return () => {
-      window.removeEventListener('keydown', handleEscape);
-    };
-  }, [activeScreenshot]);
 
   return (
     <>
@@ -95,54 +74,17 @@ const ProjectCard = ({
         >
           {isExpanded ? 'Show Less' : 'Show More'}
         </button>
-
-        {currentScreenshot ? (
-          <div className="project-carousel">
-            <button
-              type="button"
-              className="project-carousel-button"
-              onClick={() =>
-                setCurrentScreenshotIndex(
-                  (currentScreenshotIndex - 1 + screenshots.length) % screenshots.length
-                )
-              }
-            >
-              Previous
-            </button>
-
-            <figure className="project-gallery-item">
-              <button
-                type="button"
-                className="project-gallery-button"
-                onClick={() => setActiveScreenshot(currentScreenshot)}
-                aria-label={`Open screenshot: ${currentScreenshot.alt}`}
-              >
-                <img
-                  src={currentScreenshot.src}
-                  alt={currentScreenshot.alt}
-                  className="project-gallery-image"
-                />
-              </button>
-
-              {currentScreenshot.caption ? (
-                <figcaption className="project-gallery-caption">
-                  {currentScreenshot.caption}
-                </figcaption>
-              ) : null}
-            </figure>
-
-            <button
-              type="button"
-              className="project-carousel-button"
-              onClick={() =>
-                setCurrentScreenshotIndex((currentScreenshotIndex + 1) % screenshots.length)
-              }
-            >
-              Next
-            </button>
+        
+        {previewUrl ? (
+          <div className='project-preview'>
+            <iframe
+              src={previewUrl}
+              title={previewTitle || `${title} live preview`}
+              className='project-preview-frame'
+              loading='lazy'
+            />
           </div>
-        ) : null}
-
+        ): null}
 
         <div className="project-tech">
           {techStack.map((tech) => (
@@ -152,38 +94,6 @@ const ProjectCard = ({
           ))}
         </div>
       </article>
-
-      {activeScreenshot ? (
-        <div
-          className="project-lightbox"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Expanded project screenshot"
-          onClick={() => setActiveScreenshot(null)}
-        >
-          <div
-            className="project-lightbox-content"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <button
-              type="button"
-              className="project-lightbox-close"
-              onClick={() => setActiveScreenshot(null)}
-              aria-label="Close expanded screenshot"
-            >
-              Close
-            </button>
-            <img
-              src={activeScreenshot.src}
-              alt={activeScreenshot.alt}
-              className="project-lightbox-image"
-            />
-            {activeScreenshot.caption ? (
-              <p className="project-lightbox-caption">{activeScreenshot.caption}</p>
-            ) : null}
-          </div>
-        </div>
-      ) : null}
     </>
   );
 };

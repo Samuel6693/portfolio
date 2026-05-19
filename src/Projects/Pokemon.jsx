@@ -1,7 +1,4 @@
 import ProjectCard from '../components/ProjectCard.jsx';
-import homeImage from '../assets/pokemon/Home.png';
-import searchImage from '../assets/pokemon/Search.png';
-import detailsImage from '../assets/pokemon/Details.png';
 
 const Pokemon = () => {
   return (
@@ -18,26 +15,12 @@ const Pokemon = () => {
         'Separated API layer and custom hook structure for more maintainable frontend code.',
         'In-memory caching for detail requests to make repeat interactions feel faster.',
       ]}
-      screenshots={[
-        {
-          src: homeImage,
-          alt: 'Homepage view of the Pokedex Explorer application.',
-          caption: 'Landing view with the main project presentation and entry point into the app.',
-        },
-        {
-          src: searchImage,
-          alt: 'Search interface showing the Pokemon selection flow.',
-          caption: 'Searchable Pokemon list that helps users quickly find and select a Pokemon.',
-        },
-        {
-          src: detailsImage,
-          alt: 'Detailed Pokemon card with stats and metadata.',
-          caption: 'Detailed Pokemon view with artwork, stats, types, and supporting metadata.',
-        },
-      ]}
+      
       techStack={['React', 'JavaScript', 'CSS', 'Vite', 'Fetch API', 'PokeAPI']}
       githubUrl="https://github.com/Samuel6693/PokemonApplication"
       demoUrl="https://pokedex-explorer-sandy.vercel.app/"
+      previewUrl="https://pokedex-explorer-sandy.vercel.app/"
+      previewTitle="Pokedex Explorer Live Preview"
       featured
     />
   );
