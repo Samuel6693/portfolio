@@ -5,20 +5,12 @@ import Webshop from './Projects/Webshop.jsx';
 import AboutMe from './components/AboutMe.jsx';
 import Hero from './components/Hero.jsx';
 import Contact from './components/Contact.jsx';
+import Sidebar from './components/Sidebar.jsx';
 
 function App() {
   return (
-    <>
-      <header className="site-header">
-        <div className="site-header-inner">
-          <a href="#" className="site-logo">Samuel Soumi</a>
-          <nav className="site-nav" aria-label="Main navigation">
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-          </nav>
-        </div>
-      </header>
+    <div className='portfolio-shell'>
+      <Sidebar />
 
       <main className="page">
         <Hero />
@@ -35,15 +27,24 @@ function App() {
           </div>
 
           <div className="project-list">
-            <Pokemon />
-            <ProductivityAssistantApp />
-            <Webshop />
+            <div id='project-pokedex' className='project-anchor'>
+              <Pokemon />
+            </div>
+
+            <div id='project-productivity' className='project-anchor'>
+              <ProductivityAssistantApp />
+            </div>
+
+            <div id='project-webshop' className='project-anchor'>
+              <Webshop />
+            </div>
+            
           </div>
         </section>
 
         <Contact />
       </main>
-    </>
+    </div>
   );
 }
 
