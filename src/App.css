@@ -11,6 +11,7 @@
   margin-left: 300px;
   padding: 72px clamp(40px, 5vw, 96px) 72px;
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -34,10 +35,12 @@ html {
   font-size: 1.15rem;
   font-weight: 800;
 }
+
 .sidebar-nav {
   display: grid;
   gap: 14px;
 }
+
 .sidebar-nav a {
   padding: 10px 12px;
   border-radius: 8px;
@@ -45,16 +48,14 @@ html {
   font-size: 1.2rem;
   font-weight: 700;
 }
+
 .sidebar-nav a:hover {
   background: #ecfdf5;
   text-decoration: none;
 }
+
 .project-anchor {
   scroll-margin-top: 32px;
-}
-
-.project-anchor:first-child {
-  grid-column: 1 / -1;
 }
 
 .section {
@@ -104,7 +105,7 @@ html {
 
 .project-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: 1fr;
   gap: 24px;
 }
 
@@ -136,12 +137,13 @@ html {
   box-shadow: 0 10px 22px color-mix(in srgb, var(--tag-color) 14%, transparent);
   font-weight: 600;
   font-size: 1rem;
-  transition: 
+  transition:
     transform 0.18s ease,
     box-shadow 0.18s ease,
     background 0.18s ease,
     border-color 0.18s ease;
 }
+
 .hero-tags span:hover {
   transform: translateY(-2px);
   border-color: color-mix(in srgb, var(--tag-color) 65%, white);
@@ -151,6 +153,7 @@ html {
     0 0 22px color-mix(in srgb, var(--tag-color) 48%, transparent),
     0 16px 30px color-mix(in srgb, var(--tag-color) 24%, transparent);
 }
+
 .hero-tags span:hover svg {
   transform: scale(2);
 }
@@ -354,6 +357,7 @@ html {
   border-color: #5eead4;
   transform: translateY(-1px);
 }
+
 .project-preview {
   margin-top: 20px;
   border: 1px solid #dbeafe;
@@ -484,14 +488,6 @@ a:hover {
 
   .project-card-header {
     flex-direction: column;
-  }
-
-  .project-list {
-    grid-template-columns: 1fr;
-  }
-
-  .project-anchor:first-child {
-    grid-column: auto;
   }
 
   .project-links {
