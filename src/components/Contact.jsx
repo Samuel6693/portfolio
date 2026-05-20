@@ -33,10 +33,10 @@ const Contact = () => {
     <footer id="contact" className="contact footer">
       <div className="section-heading">
         <p className="section-kicker footer-kicker">Contact</p>
-        <h2>Let&apos;s talk about LIA, junior roles, or collaboration.</h2>
+        <h2>Open to LIA and junior fullstack developer roles.</h2>
         <p>
-          I&apos;m open to opportunities where I can contribute, learn from experienced
-          developers, and keep growing as a fullstack developer.
+          I&apos;m looking for a team where I can contribute to real products,
+          learn from experienced developers, and keep growing through practical work.
         </p>
       </div>
       <ul className="contact-list">
