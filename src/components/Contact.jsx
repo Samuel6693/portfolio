@@ -1,4 +1,4 @@
-import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaEnvelope, FaGithub, FaLinkedin, FaMapMarkerAlt } from 'react-icons/fa';
 
 const contactLinks = [
   {
@@ -21,6 +21,11 @@ const contactLinks = [
     external: true,
     Icon: FaGithub,
   },
+  {
+    label: 'Location',
+    text: 'Stockholm, Sweden',
+    Icon: FaMapMarkerAlt,
+  },
 ];
 
 const Contact = () => {
@@ -37,18 +42,25 @@ const Contact = () => {
       <ul className="contact-list">
         {contactLinks.map(({ label, href, text, external, Icon }) => (
           <li key={label}>
-            <a
-              href={href}
-              {...(external
-                ? {
-                  target: '_blank',
-                  rel: 'noopener noreferrer',
-                }
-                : {})}
-            >
-              <Icon aria-hidden="true" />
-              <span>{text}</span>
-            </a>
+            {href ? (
+              <a
+                href={href}
+                {...(external
+                  ? {
+                    target: '_blank',
+                    rel: 'noopener noreferrer',
+                  }
+                  : {})}
+              >
+                <Icon aria-hidden="true" />
+                <span>{text}</span>
+              </a>
+            ) : (
+              <span className="contact-info">
+                <Icon aria-hidden="true" />
+                <span>{text}</span>
+              </span>
+            )}
           </li>
         ))}
       </ul>

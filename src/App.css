@@ -296,7 +296,8 @@ html {
   margin: 0;
 }
 
-.contact-list a {
+.contact-list a,
+.contact-info {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -308,10 +309,15 @@ html {
   font-weight: 700;
 }
 
-.contact-list svg {
+.contact-list svg,
+.contact-info svg {
   width: 1rem;
   height: 1rem;
   flex: 0 0 auto;
+}
+
+.contact-info {
+  color: #3f4b5b;
 }
 
 .contact-list a:hover {
