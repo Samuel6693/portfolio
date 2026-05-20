@@ -1,4 +1,5 @@
 import {
+    FaCode,
     FaEnvelope,
     FaFileAlt,
     FaFolderOpen,
@@ -17,6 +18,11 @@ const Sidebar = () => {
                 <a href="#about">
                     <FaUser aria-hidden="true" />
                     <span>About</span>
+                </a>
+
+                <a href="#skills">
+                    <FaCode aria-hidden="true" />
+                    <span>Skills</span>
                 </a>
 
                 <div className="sidebar-group">
