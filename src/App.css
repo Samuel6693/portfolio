@@ -383,6 +383,7 @@ html {
   gap: 20px;
   margin-top: 32px;
   justify-items: center;
+  scroll-margin-top: 96px;
 }
 
 .hero-skill-group {

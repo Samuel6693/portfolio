@@ -140,7 +140,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="hero-skill-groups">
+      <div id="skills" className="hero-skill-groups">
         {skillGroups.map(({ title, items }) => (
           <div className="hero-skill-group" key={title}>
             <p className="hero-skill-title">{title}</p>
