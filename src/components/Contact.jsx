@@ -16,12 +16,6 @@ const contactLinks = [
     text: 'GitHub',
     external: true,
   },
-  {
-    label: 'CodeWars',
-    href: 'https://www.codewars.com/users/Samuel6693',
-    text: 'CodeWars',
-    external: true,
-  },
 ];
 
 const Contact = () => {
