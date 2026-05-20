@@ -185,11 +185,31 @@ html {
   box-shadow: 0 10px 24px rgba(12, 35, 64, 0.06);
 }
 
+.hero-skill-groups {
+  display: grid;
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.hero-skill-group {
+  display: grid;
+  gap: 10px;
+}
+
+.hero-skill-title {
+  margin: 0;
+  color: #115e59;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
 .hero-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 32px;
+  gap: 12px;
 }
 
 .hero-tags span {
