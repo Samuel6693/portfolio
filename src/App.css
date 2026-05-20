@@ -22,7 +22,7 @@ html {
   z-index: 100;
   width: 300px;
   height: 100vh;
-  padding: 40px 32px;
+  padding: 40px 28px;
   border-right: 1px solid #e5e7eb;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
@@ -38,20 +38,88 @@ html {
 
 .sidebar-nav {
   display: grid;
-  gap: 14px;
+  gap: 8px;
 }
 
 .sidebar-nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
   padding: 10px 12px;
   border-radius: 8px;
   color: #3f4b5b;
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   font-weight: 700;
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.sidebar-nav svg {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
 }
 
 .sidebar-nav a:hover {
   background: #ecfdf5;
+  color: #0f766e;
   text-decoration: none;
+  transform: translateX(2px);
+}
+
+.sidebar-nav a.is-active,
+.sidebar-nav a:focus {
+  background: #ccfbf1;
+  color: #0f766e;
+  box-shadow: inset 3px 0 0 #0f766e;
+  outline: none;
+}
+
+.sidebar-group {
+  display: grid;
+  gap: 6px;
+}
+
+.sidebar-group-label {
+  color: #111827;
+}
+
+.sidebar-subnav {
+  display: grid;
+  gap: 4px;
+  margin-left: 12px;
+  padding-left: 14px;
+  border-left: 2px solid #dbeafe;
+}
+
+.sidebar-subnav a {
+  min-height: 36px;
+  gap: 8px;
+  padding: 7px 10px;
+  color: #64748b;
+  font-size: 0.92rem;
+  font-weight: 650;
+}
+
+.sidebar-subnav svg {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+.sidebar-subnav a:hover {
+  background: #f0fdfa;
+  color: #0f766e;
+}
+
+.sidebar-subnav a.is-active,
+.sidebar-subnav a:focus {
+  background: #ecfdf5;
+  color: #0f766e;
+  box-shadow: inset 3px 0 0 #14b8a6;
+  outline: none;
 }
 
 .project-anchor {
@@ -464,8 +532,27 @@ a:hover {
     overflow: visible;
   }
 
+  .sidebar-group {
+    flex: 1 1 100%;
+    gap: 8px;
+  }
+
+  .sidebar-subnav {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 0;
+    padding-left: 0;
+    border-left: 0;
+    gap: 8px;
+  }
+
   .sidebar-nav a {
     white-space: nowrap;
+  }
+
+  .sidebar-subnav a {
+    min-height: 34px;
+    font-size: 0.88rem;
   }
 
   .section {
