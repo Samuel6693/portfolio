@@ -160,6 +160,199 @@ html {
   color: #3f4b5b;
 }
 
+.hero-status-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.hero-status-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  min-width: min(100%, 300px);
+  padding: 16px 18px;
+  border: 1px solid rgba(20, 184, 166, 0.38);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(240, 253, 250, 0.96) 0%, #ffffff 100%);
+  color: #0f766e;
+  box-shadow:
+    0 0 0 4px rgba(20, 184, 166, 0.08),
+    0 16px 34px rgba(15, 118, 110, 0.12);
+  transition:
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    transform 0.22s ease,
+    background 0.22s ease;
+}
+
+.hero-status-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.28), transparent 42%),
+    repeating-linear-gradient(0deg, transparent 0 11px, rgba(15, 118, 110, 0.022) 11px 12px);
+  pointer-events: none;
+}
+
+.hero-status-card>* {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-status-card-off {
+  border-color: #fed7aa;
+  background:
+    linear-gradient(135deg, #fff7ed 0%, #ffffff 100%);
+  color: #9a3412;
+  box-shadow:
+    0 0 0 4px rgba(251, 146, 60, 0.08),
+    0 14px 30px rgba(154, 52, 18, 0.08);
+}
+
+.hero-status-card-off:hover {
+  transform: translateY(-2px);
+  border-color: #fdba74;
+  background:
+    linear-gradient(135deg, #ffedd5 0%, #ffffff 100%);
+  box-shadow:
+    0 0 0 4px rgba(251, 146, 60, 0.12),
+    0 0 28px rgba(251, 146, 60, 0.16),
+    0 18px 36px rgba(154, 52, 18, 0.12);
+}
+
+.hero-status-card-learning {
+  border-color: #bfdbfe;
+  background:
+    linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+  color: #1d4ed8;
+  box-shadow:
+    0 0 0 4px rgba(59, 130, 246, 0.08),
+    0 14px 30px rgba(29, 78, 216, 0.08);
+}
+
+.hero-status-card-learning:hover {
+  transform: translateY(-2px);
+  border-color: #93c5fd;
+  box-shadow:
+    0 0 0 4px rgba(59, 130, 246, 0.11),
+    0 0 28px rgba(59, 130, 246, 0.14),
+    0 18px 36px rgba(29, 78, 216, 0.1);
+}
+
+.hero-status-dot {
+  margin-top: 7px;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: #10b981;
+  box-shadow:
+    0 0 0 6px rgba(16, 185, 129, 0.16),
+    0 0 18px rgba(16, 185, 129, 0.55);
+  animation: status-online 2.8s ease-in-out infinite;
+}
+
+.hero-status-dot-off {
+  background: #f97316;
+  box-shadow: 0 0 0 6px rgba(249, 115, 22, 0.13);
+  animation: status-disabled 3.6s ease-in-out infinite;
+}
+
+.hero-status-dot-learning {
+  background: #3b82f6;
+  box-shadow:
+    0 0 0 6px rgba(59, 130, 246, 0.14),
+    0 0 16px rgba(59, 130, 246, 0.38);
+}
+
+.hero-status-card-off:hover .hero-status-dot-off {
+  background: #fb923c;
+  box-shadow:
+    0 0 0 6px rgba(251, 146, 60, 0.14),
+    0 0 16px rgba(251, 146, 60, 0.5);
+}
+
+.hero-status-card strong {
+  display: block;
+  margin-top: 3px;
+  font-size: 1.08rem;
+  line-height: 1.2;
+}
+
+.hero-status-label,
+.hero-status-meta,
+.hero-status-message {
+  display: block;
+}
+
+.hero-status-label {
+  color: #0f766e;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.hero-status-card-off .hero-status-label {
+  color: #c2410c;
+}
+
+.hero-status-card-learning .hero-status-label {
+  color: #2563eb;
+}
+
+.hero-status-meta {
+  margin-top: 3px;
+  color: #059669;
+  font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', monospace;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.hero-status-card-off .hero-status-meta {
+  color: #ea580c;
+}
+
+.hero-status-card-learning .hero-status-meta {
+  color: #2563eb;
+}
+
+.hero-status-message {
+  margin-top: 7px;
+  color: #3f4b5b;
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+.hero-status-card-off .hero-status-message {
+  color: #7c2d12;
+}
+
+.hero-status-card-learning .hero-status-message {
+  color: #1e3a8a;
+}
+
+.hero-status-message-hover {
+  display: none;
+}
+
+.hero-status-card-off:hover .hero-status-message-default {
+  display: none;
+}
+
+.hero-status-card-off:hover .hero-status-message-hover {
+  display: block;
+  color: #9a3412;
+}
+
 .projects {
   display: block;
 }
@@ -269,6 +462,30 @@ html {
   transition: transform 0.18s ease;
 }
 
+@keyframes status-online {
+  0%,
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+
+  50% {
+    opacity: 0.72;
+    scale: 0.92;
+  }
+}
+
+@keyframes status-disabled {
+  0%,
+  100% {
+    opacity: 0.52;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+}
+
 @keyframes tag-float {
   0%,
   100% {
@@ -285,6 +502,7 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .hero-status-dot,
   .hero-tags span {
     animation: none;
   }

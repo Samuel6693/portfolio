@@ -31,10 +31,6 @@ import { VscVscode } from 'react-icons/vsc';
 
 const skillGroups = [
   {
-    title: 'Status',
-    items: [{ label: 'Available for LIA', color: '#047857' }],
-  },
-  {
     title: 'Frontend',
     items: [
       { label: 'React', Icon: SiReact, color: '#087ea4' },
@@ -110,6 +106,39 @@ const Hero = () => {
         to real products, learn from experienced developers, and keep growing as a
         fullstack developer.
       </p>
+
+      <div className="hero-status-row">
+        <div className="hero-status-card">
+          <span className="hero-status-dot" aria-hidden="true"></span>
+          <div>
+            <span className="hero-status-label">LIA Availability</span>
+            <strong>Available for LIA</strong>
+            <span className="hero-status-meta">STATUS: ONLINE</span>
+            <span className="hero-status-message">Internships and junior roles.</span>
+          </div>
+        </div>
+
+        <div className="hero-status-card hero-status-card-off">
+          <span className="hero-status-dot hero-status-dot-off" aria-hidden="true"></span>
+          <div>
+            <span className="hero-status-label">Comfort Zone</span>
+            <strong>Disabled manually</strong>
+            <span className="hero-status-meta">STATUS: OFFLINE</span>
+            <span className="hero-status-message hero-status-message-default">Stability sacrificed for progress.</span>
+            <span className="hero-status-message hero-status-message-hover">Growth starts where comfort ends.</span>
+          </div>
+        </div>
+
+        <div className="hero-status-card hero-status-card-learning">
+          <span className="hero-status-dot hero-status-dot-learning" aria-hidden="true"></span>
+          <div>
+            <span className="hero-status-label">Learning Mode</span>
+            <strong>Active daily</strong>
+            <span className="hero-status-meta">STATUS: ACTIVE</span>
+            <span className="hero-status-message">Building, testing, improving.</span>
+          </div>
+        </div>
+      </div>
 
       <div className="hero-skill-groups">
         {skillGroups.map(({ title, items }) => (
