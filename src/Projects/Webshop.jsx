@@ -19,7 +19,7 @@ const Webshop = () => {
         'Protected admin routes for managing products, variants, users, and orders.',
         'Configured Vercel deployment support, cron publishing, and Postman API checks.',
       ]}
-      techStack={['Node.js', 'Express', 'MongoDB', 'Mongoose', 'JWT', 'bcrypt', 'SSE', 'Postman', 'Vercel']}
+      techStack={['Node.js', 'Express', 'MongoDB', 'Mongoose', 'JWT', 'bcrypt', 'Server-Sent Events', 'Vercel', 'Vercel Cron', 'Postman']}
       githubUrl="https://github.com/Samuel6693/webbshop-2026-be"
       githubLabel="Backend Repo"
       repoLinks={[
