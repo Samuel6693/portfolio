@@ -74,6 +74,14 @@ const ProjectCard = ({
         >
           {isExpanded ? 'Show Less' : 'Show More'}
         </button>
+
+        <div className="project-tech">
+          {techStack.map((tech) => (
+            <span key={tech} className="project-tech-pill">
+              {tech}
+            </span>
+          ))}
+        </div>
         
         {previewUrl ? (
           <div className='project-preview'>
@@ -85,14 +93,6 @@ const ProjectCard = ({
             />
           </div>
         ): null}
-
-        <div className="project-tech">
-          {techStack.map((tech) => (
-            <span key={tech} className="project-tech-pill">
-              {tech}
-            </span>
-          ))}
-        </div>
       </article>
     </>
   );

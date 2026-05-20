@@ -15,7 +15,7 @@ const ProductivityAssistantApp = () => {
         'Event planning with datetime validation, upcoming/past filters, formatted dates, and event counts.',
         'Reusable localStorage state hook plus responsive dark UI, badges, forms, and empty states.',
       ]}
-      techStack={['React', 'Vite', 'React Router', 'JavaScript', 'CSS', 'localStorage', 'ESLint']}
+      techStack={['React', 'JavaScript', 'CSS', 'Vite', 'React Router', 'localStorage']}
       githubUrl="https://github.com/Samuel6693/productivity-assistant-portfolio"
       demoUrl="https://productivity-assistant-portfolio.vercel.app/"
       previewUrl="https://productivity-assistant-portfolio.vercel.app/"
