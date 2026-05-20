@@ -1,4 +1,5 @@
 import './App.css'
+import { Analytics } from '@vercel/analytics/react';
 import Pokemon from './Projects/Pokemon.jsx';
 import ProductivityAssistantApp from './Projects/ProductivityAssistantApp.jsx';
 import Webshop from './Projects/Webshop.jsx';
@@ -44,6 +45,7 @@ function App() {
       </main>
 
       <Contact />
+      <Analytics />
     </div>
   );
 }
